@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('test', [\App\Http\Controllers\NLPController::class, 'test']);
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

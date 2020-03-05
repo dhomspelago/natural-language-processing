@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="a2500763-b3a3-4174-8f99-9a82c5547228" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/..env.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NLPController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NLPController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secret.json" beforeDir="false" afterPath="$PROJECT_DIR$/secret.json" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
@@ -155,69 +115,10 @@
       <path value="$PROJECT_DIR$/vendor/vanderlee/php-sentence" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1YdsbHn62CDopGUx5GsmbZUB6Qu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/leap-vista-web" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/sass/template" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a2500763-b3a3-4174-8f99-9a82c5547228" name="Default Changelist" comment="" />
-      <created>1583283875535</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1583283875535</updated>
-      <workItem from="1583283877403" duration="14612000" />
-      <workItem from="1583364827238" duration="24770000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583293513473">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1583293513473" />
-    <state x="679" y="336" width="551" height="405" key="NewPhpClassDialog" timestamp="1583385072565">
-      <screen x="0" y="203" width="1920" height="877" />
-    </state>
-    <state x="679" y="336" width="551" height="405" key="NewPhpClassDialog/1920.176.1366.768/0.203.1920.877@0.203.1920.877" timestamp="1583385072565" />
-    <state width="587" height="446" key="SwitcherDM" timestamp="1583298371369">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="587" height="446" key="SwitcherDM/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1583298371369" />
-    <state x="570" y="136" width="770" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583292657306">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="570" y="136" width="770" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1583292657306" />
-    <state x="138" y="380" width="672" height="565" key="search.everywhere.popup" timestamp="1583391538920">
-      <screen x="0" y="203" width="1920" height="877" />
-    </state>
-    <state x="138" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1583302451073" />
-    <state x="138" y="380" width="672" height="565" key="search.everywhere.popup/1920.176.1366.768/0.203.1920.877@0.203.1920.877" timestamp="1583391538920" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
 </project>

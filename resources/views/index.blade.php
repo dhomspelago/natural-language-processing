@@ -3,9 +3,11 @@
   <!-- Header -->
   <!-- Masthead -->
   <header class="masthead text-white text-center">
-    <div class="overlay"></div>
     <div class="container">
       <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <img src="{{asset('image/logo.png')}}" alt="">
+        </div>
         <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">Welcome to Natural Language Processing !</h1>
         </div>

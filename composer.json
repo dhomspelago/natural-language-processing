@@ -9,10 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "davmixcool/php-sentiment-analyzer": "^1.0",
         "fideloper/proxy": "^4.0",
         "joggapp/laravel-natural-language": "^4.0",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "php-science/textrank": "^1.1",
+        "yooper/php-text-analysis": "^1.5"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

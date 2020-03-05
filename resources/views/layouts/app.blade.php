@@ -22,42 +22,46 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <style>
+  </style>
 </head>
 <body class="bg-dark">
 <div id="app">
   <div id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">NLP</a>
-        @guest
-          <div>
-            <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-            <a class="btn btn-primary" href="{{ route('register') }}">Sign up</a>
-          </div>
-        @else
-          <div class="dropdown">
-            <a class="dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="{{ route('logout') }}"
-                 onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-              </a>
-
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-              </form>
-            </div>
-          </div>
-        @endguest
+      <div>
+        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('image/logo.png')}}" style="height: 50px"></a>
       </div>
+      @guest
+        <div>
+          <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
+          <a class="btn btn-primary" href="{{ route('register') }}">Sign up</a>
+        </div>
+      @else
+        <div class="dropdown">
+          <a class="dropdown-toggle" type="button" id="dropdownMenuButton"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ Auth::user()->name }} <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          </div>
+        </div>
+      @endguest
     </nav>
   </div>
-  @yield('content')
+  <div class="container">
+    @yield('content')
+  </div>
 </div>
 </body>
 </html>
