@@ -25,40 +25,30 @@
   <style>
   </style>
 </head>
-<body class="bg-dark">
+<body>
 <div id="app">
-  <div id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top fixed-top">
-      <div>
-        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('image/logo.png')}}" style="height: 50px"></a>
-      </div>
-      @guest
+  <nav class="navbar">
+    <div class="d-flex justify-content-start">
+      <a class="navbar-brand pt-4 pl-4" href="{{ url('/') }}">
+        <img src="{{ asset('image/Logo.png') }}" height="45px">
+      </a>
+    </div>
+    <div class="d-flex justify-content-end">
+      @auth
         <div>
-          <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-          <a class="btn btn-primary" href="{{ route('register') }}">Sign up</a>
-        </div>
-      @else
-        <div class="dropdown">
-          <a class="dropdown-toggle" type="button" id="dropdownMenuButton"
-             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ Auth::user()->name }} <span class="caret"></span>
+          <a href="{{ route('logout') }}"
+             onclick="event.preventDefault();
+         document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-              {{ __('Logout') }}
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-            </form>
-          </div>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
         </div>
-      @endguest
-    </nav>
-  </div>
+      @endauth
+    </div>
+  </nav>
+
   <div class="container">
     @yield('content')
   </div>

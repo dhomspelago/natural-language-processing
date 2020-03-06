@@ -11,14 +11,14 @@
 |
 */
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\NLPController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [LoginController::class, 'showLoginForm']);
 
-Route::get('test', [\App\Http\Controllers\NLPController::class, 'test']);
+Route::get('test', [NLPController::class, 'test']);
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
