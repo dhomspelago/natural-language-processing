@@ -19,6 +19,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/joggapp/laravel-natural-language" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/patrickschur/language-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/patrickschur/stanford-nlp-tagger" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-science/textrank" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />

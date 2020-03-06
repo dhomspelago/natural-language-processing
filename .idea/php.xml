@@ -113,6 +113,8 @@
       <path value="$PROJECT_DIR$/vendor/yooper/php-text-analysis" />
       <path value="$PROJECT_DIR$/vendor/wamania/php-stemmer" />
       <path value="$PROJECT_DIR$/vendor/vanderlee/php-sentence" />
+      <path value="$PROJECT_DIR$/vendor/patrickschur/language-detection" />
+      <path value="$PROJECT_DIR$/vendor/patrickschur/stanford-nlp-tagger" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

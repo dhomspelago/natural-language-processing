@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a1ebff639f4c2c0f7b561ddf87b3842",
+    "content-hash": "68fa697b3ff17682ae8b579deb5fe73f",
     "packages": [
         {
             "name": "davmixcool/php-sentiment-analyzer",
@@ -1814,6 +1814,101 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "patrickschur/language-detection",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/patrickschur/language-detection.git",
+                "reference": "9d7a45118289939ef46d8a02763c7fec32eed7ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/patrickschur/language-detection/zipball/9d7a45118289939ef46d8a02763c7fec32eed7ba",
+                "reference": "9d7a45118289939ef46d8a02763c7fec32eed7ba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LanguageDetection\\": "src/LanguageDetection"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Schur",
+                    "email": "patrick_schur@outlook.de"
+                }
+            ],
+            "description": "A language detection library for PHP. Detects the language from a given text string.",
+            "homepage": "https://github.com/patrickschur/language-detection",
+            "keywords": [
+                "detect",
+                "detection",
+                "language"
+            ],
+            "time": "2019-11-16T14:23:06+00:00"
+        },
+        {
+            "name": "patrickschur/stanford-nlp-tagger",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/patrickschur/stanford-nlp-tagger.git",
+                "reference": "5e28cae083aee998719ed49213f91d0f6ff8327b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/patrickschur/stanford-nlp-tagger/zipball/5e28cae083aee998719ed49213f91d0f6ff8327b",
+                "reference": "5e28cae083aee998719ed49213f91d0f6ff8327b",
+                "shasum": ""
+            },
+            "require": {
+                "patrickschur/language-detection": "^3",
+                "php": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "StanfordTagger\\": "src/StanfordTagger"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Schur",
+                    "email": "patrick_schur@outlook.de"
+                }
+            ],
+            "description": "PHP wrapper for the Stanford Natural Language Processing library. Supports POSTagger and CRFClassifier.",
+            "homepage": "https://github.com/patrickschur/stanford-nlp-tagger",
+            "keywords": [
+                "classifier",
+                "language",
+                "natural-language-processing",
+                "ner",
+                "nlp",
+                "pos",
+                "tagger",
+                "wrapper"
+            ],
+            "time": "2017-08-21T16:38:21+00:00"
         },
         {
             "name": "php-science/textrank",
