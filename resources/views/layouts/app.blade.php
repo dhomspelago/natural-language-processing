@@ -30,19 +30,15 @@
   <nav class="navbar">
     <div class="d-flex justify-content-start">
       <a class="navbar-brand pt-4 pl-4" href="{{ url('/') }}">
-        <img src="{{ asset('image/Logo.png') }}" height="45px">
+        <img src="{{ asset('image/logo.png') }}" height="45px">
       </a>
     </div>
     <div class="d-flex justify-content-end">
       @auth
         <div>
-          <a href="{{ route('logout') }}"
-             onclick="event.preventDefault();
-         document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
             @csrf
+            <button type="submit" class="btn input-button">Logout</button>
           </form>
         </div>
       @endauth

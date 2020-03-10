@@ -45,6 +45,12 @@
   width: 110px;
   height: 46px;
   font-size: 12px;
+  border: 0;
+}
+
+#logout-form .input-button {
+  background: #A0A8F3;
+  box-shadow: none;
 }
 
 
@@ -71,4 +77,15 @@
 
 .invalid-feedback {
   color: #e24642 !important;
+}
+
+.text-area {
+  resize: none;
+  border: 2px solid #A0A8F3;
+}
+
+.text-area:focus {
+  border-color: rgba(210, 214, 250, 1) !important;
+  box-shadow: 0 1px 1px rgba(210, 214, 250, 1) inset, 0 0 8px rgba(210, 214, 250, 1) !important;
+  outline: 0 none !important;
 }

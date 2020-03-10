@@ -10931,6 +10931,12 @@ a.text-dark:focus {
   width: 110px;
   height: 46px;
   font-size: 12px;
+  border: 0;
+}
+
+#logout-form .input-button {
+  background: #A0A8F3;
+  box-shadow: none;
 }
 
 .input-button:hover {
@@ -10956,5 +10962,16 @@ a.text-dark:focus {
 
 .invalid-feedback {
   color: #e24642 !important;
+}
+
+.text-area {
+  resize: none;
+  border: 2px solid #A0A8F3;
+}
+
+.text-area:focus {
+  border-color: #d2d6fa !important;
+  box-shadow: 0 1px 1px #d2d6fa inset, 0 0 8px #d2d6fa !important;
+  outline: 0 none !important;
 }
 
