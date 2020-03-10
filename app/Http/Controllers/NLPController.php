@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use JoggApp\NaturalLanguage\NaturalLanguageClient;
+use App\Http\Requests\NLPRequest;
 use LanguageDetection\Language;
-use PhpScience\TextRank\TextRankFacade;
-use PhpScience\TextRank\Tool\StopWords\English;
 use Sentiment\Analyzer;
 use StanfordTagger\CRFClassifier;
-use StanfordTagger\POSTagger;
 use StanfordTagger\StanfordTagger;
 
 
 class NLPController extends Controller
 {
-    public function test()
+    public function analyze(NLPRequest $request)
     {
-        $text = 'Albert Einstein was a theoretical physicist born in Germany.';
-
-        return $this->tsvConverter($this->classifyText($text));
+        switch (strtolower($request->get('type'))) {
+            case 'summarize':
+                return $this->summarizeText($request->get('text'));
+            case 'sentiment':
+                return $this->analyzeTextSentiment($request->get('text'));
+            case 'language':
+                return $this->detectLanguage($request->get('text'));
+            case 'categorize':
+                return $this->tsvConverter($this->classifyText($request->get('text')));
+        }
     }
 
     private function summarizeText($text)
@@ -47,7 +50,7 @@ class NLPController extends Controller
 
     private function detectLanguage($text)
     {
-        $detectLang = new Language(['zh', 'es', 'en', 'hi', 'ar', 'bn', 'pt', 'ru', 'ja']);
+        $detectLang = new Language(['zh', 'es', 'en', 'hi', 'ar', 'bn', 'pt', 'ru', 'ja', 'ko']);
 
         return $detectLang->detect($text)->bestResults()->close();
     }

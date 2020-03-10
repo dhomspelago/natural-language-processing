@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'showLoginForm']);
 
 Route::get('test', [NLPController::class, 'test']);
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 });
+Route::post('api/analyze', [NLPController::class, 'analyze'])->name('analyze');
