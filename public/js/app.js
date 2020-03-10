@@ -1973,6 +1973,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'content',
   data: function data() {
@@ -1991,8 +1998,10 @@ __webpack_require__.r(__webpack_exports__);
     analyze: function analyze() {
       var _this = this;
 
+      this.resultBool = false;
       this.disable = true;
       this.btnName = 'Loading.....';
+      this.result = null;
       axios.post('/api/analyze', {
         'type': this.type,
         'text': this.text
@@ -2000,11 +2009,33 @@ __webpack_require__.r(__webpack_exports__);
         _this.disable = false;
         _this.btnName = 'Analyze';
         _this.resultBool = true;
+
+        _this.returnResult(response);
       })["catch"](function (errors) {
         _this.disable = false;
         _this.btnName = 'Analyze';
         swal('Opppsss! Something went wrong!', 'The text and type field are required', 'error');
       });
+    },
+    returnResult: function returnResult(response) {
+      console.log(response.data);
+
+      switch (this.type) {
+        case 'summarize':
+          return this.result = response.data;
+
+        case 'sentiment':
+          return '';
+
+        case "language":
+          return '';
+      }
+    },
+    getSentiment: function getSentiment(sentiment) {
+      switch (sentiment) {
+        case 'neg':
+          break;
+      }
     }
   }
 });
@@ -37509,10 +37540,6 @@ var render = function() {
               _vm._v(" "),
               _c("option", { attrs: { value: "language" } }, [
                 _vm._v("Language")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "categorize" } }, [
-                _vm._v("Categorize")
               ])
             ]
           )
@@ -37536,7 +37563,21 @@ var render = function() {
       ? _c("div", { staticClass: "result" }, [
           _c("span", [_vm._v("Result:")]),
           _vm._v(" "),
-          _c("div", [_vm._v("\n      " + _vm._s(_vm.result) + "\n    ")])
+          _vm.type === "summarize"
+            ? _c("div", [_vm._v("\n      " + _vm._s(_vm.result) + "\n    ")])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.type === "sentiment"
+            ? _c("div", [
+                _c("i", { staticClass: "far fa-smile" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "far fa-frown" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "far fa-meh" })
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.type === "language" ? _c("div") : _vm._e()
         ])
       : _vm._e()
   ])
@@ -49956,8 +49997,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/coreproc/MyRepo/npl/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/coreproc/MyRepo/npl/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\natural-language-processing\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\natural-language-processing\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

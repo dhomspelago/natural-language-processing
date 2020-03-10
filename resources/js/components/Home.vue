@@ -14,7 +14,6 @@
           <option value="summarize">Summarize</option>
           <option value="sentiment">Sentiment</option>
           <option value="language">Language</option>
-          <option value="categorize">Categorize</option>
         </select>
       </div>
       <div class="d-flex justify-content-center">
@@ -23,8 +22,16 @@
     </div>
     <div class="result" v-if="resultBool">
       <span>Result:</span>
-      <div>
+      <div v-if="type === 'summarize'">
         {{ result }}
+      </div>
+      <div v-if="type === 'sentiment'">
+        <i class="far fa-smile"></i>
+        <i class="far fa-frown"></i>
+        <i class="far fa-meh"></i>
+      </div>
+      <div v-if="type === 'language'">
+
       </div>
     </div>
   </div>
@@ -33,7 +40,7 @@
 <script>
   export default {
     name: 'content',
-    data () {
+    data() {
       return {
         type: '',
         text: '',
@@ -44,13 +51,15 @@
         errors: null
       }
     },
-    mounted () {
+    mounted() {
 
     },
     methods: {
-      analyze () {
+      analyze() {
+        this.resultBool = false
         this.disable = true
         this.btnName = 'Loading.....'
+        this.result = null
         axios.post('/api/analyze', {
           'type': this.type,
           'text': this.text
@@ -58,12 +67,30 @@
           this.disable = false
           this.btnName = 'Analyze'
           this.resultBool = true
+          this.returnResult(response)
         }).catch((errors) => {
           this.disable = false
           this.btnName = 'Analyze'
           swal('Opppsss! Something went wrong!', 'The text and type field are required', 'error')
         })
       },
+      returnResult(response) {
+        console.log(response.data)
+        switch (this.type) {
+          case 'summarize':
+            return this.result = response.data
+          case 'sentiment':
+            return ''
+          case "language":
+            return ''
+        }
+      },
+      getSentiment(sentiment) {
+        switch (sentiment) {
+          case 'neg':
+            break
+        }
+      }
     }
   }
 </script>
