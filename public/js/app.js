@@ -1980,6 +1980,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'content',
   data: function data() {
@@ -1988,9 +1994,9 @@ __webpack_require__.r(__webpack_exports__);
       text: '',
       disable: false,
       btnName: 'Analyze',
-      result: '',
       resultBool: false,
-      errors: null
+      summarize: '',
+      languageResult: ''
     };
   },
   mounted: function mounted() {},
@@ -2018,23 +2024,16 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     returnResult: function returnResult(response) {
-      console.log(response.data);
-
       switch (this.type) {
         case 'summarize':
-          return this.result = response.data;
+          this.summarize = response.data;
+          return this.summarize;
 
         case 'sentiment':
           return '';
 
-        case "language":
-          return '';
-      }
-    },
-    getSentiment: function getSentiment(sentiment) {
-      switch (sentiment) {
-        case 'neg':
-          break;
+        case 'language':
+          return this.languageResult = response.data;
       }
     }
   }
@@ -37473,7 +37472,7 @@ var render = function() {
               expression: "text"
             }
           ],
-          staticClass: "text-area w-100",
+          staticClass: "text-area w-100 p-4",
           attrs: { rows: "10" },
           domProps: { value: _vm.text },
           on: {
@@ -37560,24 +37559,39 @@ var render = function() {
     ]),
     _vm._v(" "),
     _vm.resultBool
-      ? _c("div", { staticClass: "result" }, [
-          _c("span", [_vm._v("Result:")]),
+      ? _c("div", [
+          _c("h3", [_vm._v("Result:")]),
           _vm._v(" "),
-          _vm.type === "summarize"
-            ? _c("div", [_vm._v("\n      " + _vm._s(_vm.result) + "\n    ")])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.type === "sentiment"
-            ? _c("div", [
-                _c("i", { staticClass: "far fa-smile" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "far fa-frown" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "far fa-meh" })
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.type === "language" ? _c("div") : _vm._e()
+          _c("div", { staticClass: "result" }, [
+            _vm.type === "summarize"
+              ? _c(
+                  "div",
+                  { staticClass: "p-4" },
+                  _vm._l(_vm.summarize, function(data) {
+                    return _c("p", [
+                      _vm._v("\n          " + _vm._s(data) + "\n        ")
+                    ])
+                  }),
+                  0
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.type === "sentiment"
+              ? _c("div", [
+                  _c("i", { staticClass: "far fa-smile" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "far fa-frown" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "far fa-meh" })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.type === "language"
+              ? _c("div", { staticClass: "p-4" }, [
+                  _c("p", [_vm._v(_vm._s(_vm.languageResult))])
+                ])
+              : _vm._e()
+          ])
         ])
       : _vm._e()
   ])
@@ -49997,8 +50011,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\natural-language-processing\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\natural-language-processing\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/coreproc/MyRepo/npl/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/coreproc/MyRepo/npl/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

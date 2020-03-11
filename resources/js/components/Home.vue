@@ -5,7 +5,7 @@
     </div>
     <div class="content">
       <div class="d-flex justify-content-center mb-3">
-        <textarea class="text-area w-100" rows="10" v-model="text"></textarea>
+        <textarea class="text-area w-100 p-4" rows="10" v-model="text"></textarea>
       </div>
       <div class="d-flex justify-content-center mb-3 align-items-center">
         <label class="label-text mr-2">Select Type:</label>
@@ -20,18 +20,24 @@
         <button class="btn input-button" @click="analyze" :disabled="disable">{{ btnName }}</button>
       </div>
     </div>
-    <div class="result" v-if="resultBool">
-      <span>Result:</span>
-      <div v-if="type === 'summarize'">
-        {{ result }}
-      </div>
-      <div v-if="type === 'sentiment'">
-        <i class="far fa-smile"></i>
-        <i class="far fa-frown"></i>
-        <i class="far fa-meh"></i>
-      </div>
-      <div v-if="type === 'language'">
 
+    <div v-if="resultBool">
+      <h3>Result:</h3>
+      <div class="result">
+        <div v-if="type === 'summarize'"
+             class="p-4">
+          <p v-for="data in summarize">
+            {{ data }}
+          </p>
+        </div>
+        <div v-if="type === 'sentiment'">
+          <i class="far fa-smile"></i>
+          <i class="far fa-frown"></i>
+          <i class="far fa-meh"></i>
+        </div>
+        <div v-if="type === 'language'" class="p-4">
+          <p>{{ languageResult }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -40,22 +46,23 @@
 <script>
   export default {
     name: 'content',
-    data() {
+    data () {
       return {
         type: '',
         text: '',
         disable: false,
         btnName: 'Analyze',
-        result: '',
         resultBool: false,
-        errors: null
+        summarize: '',
+        languageResult: ''
+
       }
     },
-    mounted() {
+    mounted () {
 
     },
     methods: {
-      analyze() {
+      analyze () {
         this.resultBool = false
         this.disable = true
         this.btnName = 'Loading.....'
@@ -74,23 +81,17 @@
           swal('Opppsss! Something went wrong!', 'The text and type field are required', 'error')
         })
       },
-      returnResult(response) {
-        console.log(response.data)
+      returnResult (response) {
         switch (this.type) {
           case 'summarize':
-            return this.result = response.data
+            this.summarize = response.data
+            return this.summarize
           case 'sentiment':
             return ''
-          case "language":
-            return ''
+          case 'language':
+            return this.languageResult = response.data
         }
       },
-      getSentiment(sentiment) {
-        switch (sentiment) {
-          case 'neg':
-            break
-        }
-      }
     }
   }
 </script>

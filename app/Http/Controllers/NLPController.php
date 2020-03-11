@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NLPRequest;
 use LanguageDetection\Language;
+use PhpScience\TextRank\TextRankFacade;
+use PhpScience\TextRank\Tool\StopWords\English;
 use Sentiment\Analyzer;
 use StanfordTagger\CRFClassifier;
 use StanfordTagger\StanfordTagger;
@@ -27,12 +29,13 @@ class NLPController extends Controller
 
     private function summarizeText($text)
     {
-        $stopWords = get_stop_words(base_path() . '/vendor/yooper/stop-words/data/stop-words_english_1_en.txt');
-        $stopWords = array_map(function ($word) {
-            return " {$word} ";
-        }, $stopWords);
+        $api = new TextRankFacade();
 
-        return summary_simple($text, $stopWords)[0];
+        $stopWords = new English();
+
+        $api->setStopWords($stopWords);
+
+        return $api->summarizeTextBasic($text);
     }
 
     private function analyzeTextSentiment($text)
@@ -50,9 +53,52 @@ class NLPController extends Controller
 
     private function detectLanguage($text)
     {
-        $detectLang = new Language(['zh', 'es', 'en', 'hi', 'ar', 'bn', 'pt', 'ru', 'ja', 'ko']);
+        $languages = ['zh', 'es', 'en', 'hi', 'ar', 'bn', 'pt', 'ru', 'ja', 'ko'];
 
-        return $detectLang->detect($text)->bestResults()->close();
+        $detectLang = new Language($languages);
+
+        $data = $detectLang->detect($text)->bestResults()->close();
+
+        $key = array_keys($data);
+
+        $lang = $key[0];
+
+        $result = 'The language used in the content is ';
+
+        switch ($lang) {
+            case 'zh':
+                $result .= "Chinese";
+                break;
+            case 'es':
+                $result .= "Spanish";
+                break;
+            case 'en':
+                $result .= "English";
+                break;
+            case 'hi':
+                $result .= "Hindi";
+                break;
+            case 'ar':
+                $result .= "Arabic";
+                break;
+            case 'bn':
+                $result .= "Bengali";
+                break;
+            case 'pt':
+                $result .= "Portuguese";
+                break;
+            case 'ru':
+                $result .= "Russian";
+                break;
+            case 'ja':
+                $result .= "Japan";
+                break;
+            case 'ko':
+                $result .= "Korea";
+                break;
+        }
+
+        return $result;
     }
 
     private function classifyText($text)
