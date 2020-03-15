@@ -42,13 +42,7 @@ class NLPController extends Controller
     {
         $analyzer = new Analyzer();
 
-        $array = $analyzer->getSentiment($text);
-
-        array_pop($array);
-
-        $highestSentiment = max($array);
-
-        return array_search($highestSentiment, $analyzer->getSentiment($text));
+        return $analyzer->getSentiment($text);
     }
 
     private function detectLanguage($text)
@@ -67,34 +61,34 @@ class NLPController extends Controller
 
         switch ($lang) {
             case 'zh':
-                $result .= "Chinese";
+                $result .= "Chinese.";
                 break;
             case 'es':
-                $result .= "Spanish";
+                $result .= "Spanish.";
                 break;
             case 'en':
-                $result .= "English";
+                $result .= "English.";
                 break;
             case 'hi':
-                $result .= "Hindi";
+                $result .= "Hindi.";
                 break;
             case 'ar':
-                $result .= "Arabic";
+                $result .= "Arabic.";
                 break;
             case 'bn':
-                $result .= "Bengali";
+                $result .= "Bengali.";
                 break;
             case 'pt':
-                $result .= "Portuguese";
+                $result .= "Portuguese.";
                 break;
             case 'ru':
-                $result .= "Russian";
+                $result .= "Russian.";
                 break;
             case 'ja':
-                $result .= "Japan";
+                $result .= "Japanese.";
                 break;
             case 'ko':
-                $result .= "Korea";
+                $result .= "Korea.";
                 break;
         }
 

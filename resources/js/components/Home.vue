@@ -30,12 +30,27 @@
             {{ data }}
           </p>
         </div>
-        <div v-if="type === 'sentiment'">
-          <i class="far fa-smile"></i>
-          <i class="far fa-frown"></i>
-          <i class="far fa-meh"></i>
+        <div v-if="type === 'sentiment'" class="d-flex p-4 align-items-center justify-content-center h-100">
+          <div class="justify-content-start positive">
+            <div class="d-flex justify-content-center ">
+              <h2>{{ sentimentResult.pos }}</h2>
+            </div>
+            <h3>Positive</h3>
+          </div>
+          <div class="justify-content-center px-5 neutral">
+            <div class="d-flex justify-content-center">
+              <h2>{{ sentimentResult.neu }}</h2>
+            </div>
+            <h3>Neutral</h3>
+          </div>
+          <div class="justify-content-end negative">
+            <div class="d-flex justify-content-center ">
+              <h2>{{ sentimentResult.neg }}</h2>
+            </div>
+            <h3>Negative</h3>
+          </div>
         </div>
-        <div v-if="type === 'language'" class="p-4">
+        <div v-if="type === 'language'" class="p-4 language">
           <p>{{ languageResult }}</p>
         </div>
       </div>
@@ -46,7 +61,7 @@
 <script>
   export default {
     name: 'content',
-    data () {
+    data() {
       return {
         type: '',
         text: '',
@@ -54,15 +69,15 @@
         btnName: 'Analyze',
         resultBool: false,
         summarize: '',
-        languageResult: ''
-
+        languageResult: '',
+        sentimentResult: ''
       }
     },
-    mounted () {
+    mounted() {
 
     },
     methods: {
-      analyze () {
+      analyze() {
         this.resultBool = false
         this.disable = true
         this.btnName = 'Loading.....'
@@ -81,13 +96,13 @@
           swal('Opppsss! Something went wrong!', 'The text and type field are required', 'error')
         })
       },
-      returnResult (response) {
+      returnResult(response) {
         switch (this.type) {
           case 'summarize':
             this.summarize = response.data
             return this.summarize
           case 'sentiment':
-            return ''
+            return this.sentimentResult = response.data
           case 'language':
             return this.languageResult = response.data
         }
@@ -97,5 +112,19 @@
 </script>
 
 <style scoped>
+  .positive h2, .positive h3 {
+    color: #227e35 !important;
+  }
 
+  .neutral h2, .neutral h3 {
+    color: #ffdf00 !important;
+  }
+
+  .negative h2, .negative h3 {
+    color: #8b0000 !important;
+  }
+
+  .language p {
+    font-size: 2rem;
+  }
 </style>
