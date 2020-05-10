@@ -15,7 +15,6 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "patrickschur/language-detection": "^3.4",
-        "patrickschur/stanford-nlp-tagger": "^0.2.0",
         "php-science/textrank": "^1.1",
         "risan/sentiment-analysis": "dev-master",
         "yooper/php-text-analysis": "^1.5"

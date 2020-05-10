@@ -114,7 +114,6 @@
       <path value="$PROJECT_DIR$/vendor/wamania/php-stemmer" />
       <path value="$PROJECT_DIR$/vendor/vanderlee/php-sentence" />
       <path value="$PROJECT_DIR$/vendor/patrickschur/language-detection" />
-      <path value="$PROJECT_DIR$/vendor/patrickschur/stanford-nlp-tagger" />
       <path value="$PROJECT_DIR$/vendor/risan/sentiment-analysis" />
     </include_path>
   </component>

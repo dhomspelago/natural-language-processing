@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae9006ef1b7f8f41e6221aa3bb9bbbbf",
+    "content-hash": "2bb773097427370007ecfb05b1e887f8",
     "packages": [
         {
             "name": "davmixcool/php-sentiment-analyzer",
@@ -1031,6 +1031,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1077,6 +1078,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -1419,6 +1421,20 @@
                 "markdown",
                 "md",
                 "parser"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/colinodell",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league%2fcommonmark",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-02-28T18:53:50+00:00"
         },
@@ -1861,54 +1877,6 @@
                 "language"
             ],
             "time": "2019-11-16T14:23:06+00:00"
-        },
-        {
-            "name": "patrickschur/stanford-nlp-tagger",
-            "version": "v0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/patrickschur/stanford-nlp-tagger.git",
-                "reference": "5e28cae083aee998719ed49213f91d0f6ff8327b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/patrickschur/stanford-nlp-tagger/zipball/5e28cae083aee998719ed49213f91d0f6ff8327b",
-                "reference": "5e28cae083aee998719ed49213f91d0f6ff8327b",
-                "shasum": ""
-            },
-            "require": {
-                "patrickschur/language-detection": "^3",
-                "php": "^7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "StanfordTagger\\": "src/StanfordTagger"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Patrick Schur",
-                    "email": "patrick_schur@outlook.de"
-                }
-            ],
-            "description": "PHP wrapper for the Stanford Natural Language Processing library. Supports POSTagger and CRFClassifier.",
-            "homepage": "https://github.com/patrickschur/stanford-nlp-tagger",
-            "keywords": [
-                "classifier",
-                "language",
-                "natural-language-processing",
-                "ner",
-                "nlp",
-                "pos",
-                "tagger",
-                "wrapper"
-            ],
-            "time": "2017-08-21T16:38:21+00:00"
         },
         {
             "name": "php-science/textrank",
@@ -6115,5 +6083,6 @@
     "platform": {
         "php": "^7.2"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

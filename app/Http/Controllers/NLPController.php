@@ -7,8 +7,6 @@ use LanguageDetection\Language;
 use PhpScience\TextRank\TextRankFacade;
 use PhpScience\TextRank\Tool\StopWords\English;
 use Sentiment\Analyzer;
-use StanfordTagger\CRFClassifier;
-use StanfordTagger\StanfordTagger;
 
 
 class NLPController extends Controller
@@ -22,8 +20,6 @@ class NLPController extends Controller
                 return $this->analyzeTextSentiment($request->get('text'));
             case 'language':
                 return $this->detectLanguage($request->get('text'));
-            case 'categorize':
-                return $this->tsvConverter($this->classifyText($request->get('text')));
         }
     }
 
@@ -93,46 +89,5 @@ class NLPController extends Controller
         }
 
         return $result;
-    }
-
-    private function classifyText($text)
-    {
-        $classify = new CRFClassifier();
-
-        $classify->setOutputFormat(StanfordTagger::OUTPUT_FORMAT_TSV);
-
-        $classify->setClassifier(base_path() . '/stanford-ner-2018-10-16/classifiers/english.all.3class.distsim.crf.ser.gz');
-
-        $classify->setJarArchive(base_path() . '/stanford-ner-2018-10-16/stanford-ner.jar');
-
-        return $classify->tag($text);
-    }
-
-    private function tsvConverter($text)
-    {
-        $array = tokenize($text);
-
-        $keys = [];
-
-        $data = [];
-
-        $finalData = [];
-
-        foreach ($array as $k => $v) {
-            if ($k % 2 == 0) {
-                $data[] = $v;
-            } else {
-                $keys[] = $v;
-            }
-        }
-
-        foreach ($data as $k => $datum) {
-            $finalData[] = [
-                'data' => $datum,
-                'type' => $keys[$k],
-            ];
-        }
-
-        return $finalData;
     }
 }
