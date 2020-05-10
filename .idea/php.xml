@@ -97,7 +97,6 @@
       <path value="$PROJECT_DIR$/vendor/wamania/php-stemmer" />
       <path value="$PROJECT_DIR$/vendor/vanderlee/php-sentence" />
       <path value="$PROJECT_DIR$/vendor/patrickschur/language-detection" />
-      <path value="$PROJECT_DIR$/vendor/risan/sentiment-analysis" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
