@@ -14,8 +14,7 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "patrickschur/language-detection": "^3.4",
-        "php-science/textrank": "^1.1",
-        "yooper/php-text-analysis": "^1.5"
+        "php-science/textrank": "^1.1"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

@@ -91,11 +91,6 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/php-science/textrank" />
       <path value="$PROJECT_DIR$/vendor/davmixcool/php-sentiment-analyzer" />
-      <path value="$PROJECT_DIR$/vendor/yooper/nicknames" />
-      <path value="$PROJECT_DIR$/vendor/yooper/stop-words" />
-      <path value="$PROJECT_DIR$/vendor/yooper/php-text-analysis" />
-      <path value="$PROJECT_DIR$/vendor/wamania/php-stemmer" />
-      <path value="$PROJECT_DIR$/vendor/vanderlee/php-sentence" />
       <path value="$PROJECT_DIR$/vendor/patrickschur/language-detection" />
     </include_path>
   </component>
